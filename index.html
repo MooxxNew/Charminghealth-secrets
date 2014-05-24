@@ -1,0 +1,315 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>charminghealth-secrets</title>
+<meta name="description" content="Hover Slide Effect with jQuery" />
+<meta name="keywords" content="jquery, slide, hover, effect, animation, fancy, entry page, fade in"/>
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+<script src="js/cufon-yui.js" type="text/javascript"></script>
+<script src="js/Cantarell.font.js" type="text/javascript"></script>
+<style type="text/css">
+body {
+	background-image: url(images/index.jpg);
+	color: #070707;
+}
+</style>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('images/botstore1.jpg','images/images/how2.jpg','images/images/contact2.jpg','images/images/hoem2.jpg','images/images/store2.jpg')">
+<table width="910" height="705" border="0" align="center">
+  <tr>
+    <td colspan="4" rowspan="2"><h1><img src="images/images/logo.png" width="358" height="153" alt=""/></h1></td>
+    <td height="120" colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="34" colspan="4"><p><a href="index.html"><img src="images/images/b1.jpg" width="136" height="32" alt=""/></a><a href="store.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Store','','images/images/store2.jpg',1)"><img src="images/images/Untitled-1_04.png" alt="" width="136" height="32" id="Store"></a><a href="Howto.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('howto','','images/images/how2.jpg',1)"><img src="images/images/Untitled-1_05.png" alt="" width="136" height="32" id="howto"></a><a href="contact.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('contact','','images/images/contact2.jpg',1)"><img src="images/images/Untitled-1_06.png" alt="" width="134" height="32" id="contact"></a></p></td>
+  </tr>
+  <tr>
+    <td height="410" colspan="8"><div class="content">
+		<div id="hs_container" class="hs_container">
+				<a href="collagen.html"><div class="hs_area hs_area1">
+					<img class="hs_visible" src="images/area1/1.jpg" alt=""/>
+					<img src="images/area1/2.jpg" alt=""/>
+					<img src="images/area1/3.jpg" alt=""/>
+				</div></a>
+				<a href="melodi.html"><div class="hs_area hs_area2">
+					<img class="hs_visible" src="images/area2/1.jpg" alt=""/>
+					<img src="images/area2/2.jpg" alt=""/>
+					<img src="images/area2/3.jpg" alt=""/>
+				</div></a>
+				<a href="ricemilk.html"><div class="hs_area hs_area3">
+					<img class="hs_visible" src="images/area3/1.jpg" alt=""/>
+					<img src="images/area3/2.jpg" alt=""/>
+					<img src="images/area3/3.jpg" alt=""/>
+				</div></a>
+				<a href="soap.html"><div class="hs_area hs_area4">
+					<img class="hs_visible" src="images/area4/1.jpg" alt=""/>
+					<img src="images/area4/2.jpg" alt=""/>
+					<img src="images/area4/3.jpg" alt=""/>
+				</div></a>
+				<a href="cowtong.html"><div class="hs_area hs_area5">
+					<img class="hs_visible" src="images/area5/1.jpg" alt=""/>
+					<img src="images/area5/2.jpg" alt=""/>
+				</div></a>
+		</div>
+
+		</div>
+		
+        <!-- The JavaScript -->
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	  <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript">
+            $(function() {
+				//custom animations to use
+				//in the transitions
+				var animations		= ['right','left','top','bottom','rightFade','leftFade','topFade','bottomFade'];
+				var total_anim		= animations.length;
+				//just change this to one of your choice
+				var easeType		= 'swing';
+				//the speed of each transition
+				var animSpeed		= 450;
+				//caching
+				var $hs_container	= $('#hs_container');
+				var $hs_areas		= $hs_container.find('.hs_area');
+				
+				//first preload all images
+                $hs_images          = $hs_container.find('img');
+                var total_images    = $hs_images.length;
+                var cnt             = 0;
+                $hs_images.each(function(){
+                    var $this = $(this);
+                    $('<img/>').load(function(){
+                        ++cnt;
+                        if(cnt == total_images){
+							$hs_areas.each(function(){
+								var $area 		= $(this);
+								//when the mouse enters the area we animate the current
+								//image (random animation from array animations),
+								//so that the next one gets visible.
+								//"over" is a flag indicating if we can animate 
+								//an area or not (we don't want 2 animations 
+								//at the same time for each area)
+								$area.data('over',true).bind('mouseenter',function(){
+									if($area.data('over')){
+										$area.data('over',false);
+										//how many images in this area?
+										var total		= $area.children().length;
+										//visible image
+										var $current 	= $area.find('img:visible');
+										//index of visible image
+										var idx_current = $current.index();
+										//the next image that's going to be displayed.
+										//either the next one, or the first one if the current is the last
+										var $next		= (idx_current == total-1) ? $area.children(':first') : $current.next();
+										//show next one (not yet visible)
+										$next.show();
+										//get a random animation
+										var anim		= animations[Math.floor(Math.random()*total_anim)];
+										switch(anim){
+											//current slides out from the right
+											case 'right':
+												$current.animate({
+													'left':$current.width()+'px'
+												},
+												animSpeed,
+												easeType,
+												function(){
+													$current.hide().css({
+														'z-index'	: '1',
+														'left'		: '0px'
+													});
+													$next.css('z-index','9999');
+													$area.data('over',true);
+												});
+												break;
+											//current slides out from the left
+											case 'left':
+												$current.animate({
+													'left':-$current.width()+'px'
+												},
+												animSpeed,
+												easeType,
+												function(){
+													$current.hide().css({
+														'z-index'	: '1',
+														'left'		: '0px'
+													});
+													$next.css('z-index','9999');
+													$area.data('over',true);
+												});
+												break;
+											//current slides out from the top	
+											case 'top':
+												$current.animate({
+													'top':-$current.height()+'px'
+												},
+												animSpeed,
+												easeType,
+												function(){
+													$current.hide().css({
+														'z-index'	: '1',
+														'top'		: '0px'
+													});
+													$next.css('z-index','9999');
+													$area.data('over',true);
+												});
+												break;
+											//current slides out from the bottom	
+											case 'bottom':
+												$current.animate({
+													'top':$current.height()+'px'
+												},
+												animSpeed,
+												easeType,
+												function(){
+													$current.hide().css({
+														'z-index'	: '1',
+														'top'		: '0px'
+													});
+													$next.css('z-index','9999');
+													$area.data('over',true);
+												});
+												break;
+											//current slides out from the right	and fades out
+											case 'rightFade':
+												$current.animate({
+													'left':$current.width()+'px',
+													'opacity':'0'
+												},
+												animSpeed,
+												easeType,
+												function(){
+													$current.hide().css({
+														'z-index'	: '1',
+														'left'		: '0px',
+														'opacity'	: '1'
+													});
+													$next.css('z-index','9999');
+													$area.data('over',true);
+												});
+												break;
+											//current slides out from the left and fades out	
+											case 'leftFade':
+												$current.animate({
+													'left':-$current.width()+'px','opacity':'0'
+												},
+												animSpeed,
+												easeType,
+												function(){
+													$current.hide().css({
+														'z-index'	: '1',
+														'left'		: '0px',
+														'opacity'	: '1'
+													});
+													$next.css('z-index','9999');
+													$area.data('over',true);
+												});
+												break;
+											//current slides out from the top and fades out	
+											case 'topFade':
+												$current.animate({
+													'top':-$current.height()+'px',
+													'opacity':'0'
+												},
+												animSpeed,
+												easeType,
+												function(){
+													$current.hide().css({
+														'z-index'	: '1',
+														'top'		: '0px',
+														'opacity'	: '1'
+													});
+													$next.css('z-index','9999');
+													$area.data('over',true);
+												});
+												break;
+											//current slides out from the bottom and fades out	
+											case 'bottomFade':
+												$current.animate({
+													'top':$current.height()+'px',
+													'opacity':'0'
+												},
+												animSpeed,
+												easeType,
+												function(){
+													$current.hide().css({
+														'z-index'	: '1',
+														'top'		: '0px',
+														'opacity'	: '1'
+													});
+													$next.css('z-index','9999');
+													$area.data('over',true);
+												});
+												break;		
+											default:
+												$current.animate({
+													'left':-$current.width()+'px'
+												},
+												animSpeed,
+												easeType,
+												function(){
+													$current.hide().css({
+														'z-index'	: '1',
+														'left'		: '0px'
+													});
+													$next.css('z-index','9999');
+													$area.data('over',true);
+												});
+												break;
+										}	
+									}
+								});
+							});
+							
+							//when clicking the hs_container all areas get slided
+							//(just for fun...you would probably want to enter the site
+							//or something similar)
+							$hs_container.bind('click',function(){
+								$hs_areas.trigger('mouseenter');
+							});
+						}
+					}).attr('src',$this.attr('src'));
+				});			
+				
+
+            });
+        </script></td>
+  </tr>
+  <tr>
+    <td width="235" height="32" >&nbsp;</td>
+    <td width="85" >&nbsp;</td>
+    <td width="21" >&nbsp;</td>
+    <td width="7" >&nbsp;</td>
+    <td width="439" height="32" >&nbsp;</td>
+    <td width="32" ><a href="contact.html"><img src="images/LINE-icon.png" width="30" height="30" alt=""/></a></td>
+    <td width="32" ><a href="contact.html"><img src="images/1400493537_call.png" width="29" height="30" alt=""/></a></td>
+    <td width="30" height="32" ><a href="mailto:tara_pum@hotmail.com"><img src="images/1400493541_email.png" width="29" height="30" alt=""/></a></td>
+  </tr>
+</table>
+</body>
+</html>
